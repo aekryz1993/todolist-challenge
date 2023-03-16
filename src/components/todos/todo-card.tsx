@@ -23,7 +23,7 @@ export default function TodoCard({ todo }: { todo: TTodo }) {
 
   return (
     <NavLink
-      to={`todos/${todo.id}?filteredBy=${filteredBy}`}
+      to={`todos/${todo.id}${!!filteredBy ? `?filteredBy=${filteredBy}` : ""}`}
       className={({ isActive, isPending }) =>
         clsx(
           containerClasses,
